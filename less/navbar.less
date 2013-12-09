@@ -13,6 +13,7 @@
   min-height: @navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
   margin-bottom: @navbar-margin-bottom;
   border: 1px solid transparent;
+  background: transparent !important;
 
   // Prevent floats from breaking the navbar
   .clearfix();
@@ -354,8 +355,13 @@
 
 // Default navbar
 .navbar-default {
-  background-color: @navbar-default-bg;
-  border-color: @navbar-default-border;
+  // background-color: @navbar-default-bg;
+  // border-color: @navbar-default-border;
+  background: transparent !important;
+
+  .container {
+    background: transparent !important;
+  }
 
   .navbar-brand {
     color: @navbar-default-brand-color;
@@ -624,21 +630,34 @@
 }
 
 
+
 // Custom nav to get secondary navs to stick to top of page on scroll
 // ----------------------------------------
 #nav {
+  border-top: 20px solid @turquoise;
+
+
+  background-color: transparent !important;
 
   .navbar {
-    background: @turquoise;
+    color: white;
+    // background: @turquoise;
     border: none;
-    min-height: 20px;
-    height: 20px;
+    background-color: transparent;
+    // min-height: 20px;
+    // height: 20px;
     margin-bottom: 0;
 
     .container {
       // min-height: 20px;
+      background: transparent;
     }
   }
+
+  a:hover {
+    color: white;
+  }
+
 
   &.affix {
     position: fixed;
