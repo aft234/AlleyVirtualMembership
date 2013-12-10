@@ -141,18 +141,6 @@
                                                 25 gigs of FREE storage
                                             </p>
                                         </div>
-                                        <div class="amenity-box amenity-box-border-right amenity-show-border-bottom">
-                                            <div class="amenity-logo">
-                                                <span class="helper"></span>
-                                                <img src="images/icon_box.png">
-                                            </div>
-                                            <p class="amenity-name">
-                                                JAKT
-                                            </p>
-                                            <p>
-                                                Our development partner, JAKT, will work with you to design and build your product.
-                                            </p>
-                                        </div>
                                     </div>
 
                                     <div class="col-md-3 col-sm-3 amenity-container">
@@ -175,6 +163,18 @@
                                             </p>
                                             <p>
                                                 Phone service
+                                            </p>
+                                        </div>
+                                        <div class="amenity-box amenity-box-border-right amenity-show-border-bottom amenity-box-border-left">
+                                            <div class="amenity-logo">
+                                                <span class="helper"></span>
+                                                <img src="images/JAKT.png">
+                                            </div>
+                                            <p class="amenity-name">
+                                                JAKT
+                                            </p>
+                                            <p>
+                                                Our development partner, JAKT, will work with you to design and build your product.
                                             </p>
                                         </div>
                                     </div>
@@ -203,6 +203,18 @@
                                             <p>
                                                 Our legal partner, Mintz Levin,
                                                 will provide legal advice to navigate the legal waters
+                                            </p>
+                                        </div>
+                                        <div class="amenity-box amenity-box-border-right amenity-show-border-bottom">
+                                            <div class="amenity-logo">
+                                                <span class="helper"></span>
+                                                <img src="images/JAKT.png">
+                                            </div>
+                                            <p class="amenity-name">
+                                                JAKT
+                                            </p>
+                                            <p>
+                                                Our development partner, JAKT, will work with you to design and build your product.
                                             </p>
                                         </div>
                                     </div>
@@ -370,31 +382,31 @@
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="pull-right hidden-xs visible-sm visible-md visible-lg">
-                                <a href="">
+                                <a href="mailto:support@alleynyc.com" class="footer-icon" id="button_email">
                                     <img src="images/button_email.png">
                                 </a>
-                                <a href="">
+                                <a href="https://www.facebook.com/alleynyc" class="footer-icon" id="button_fb">
                                     <img src="images/button_fb.png">
                                 </a>
-                                <a href="">
+                                <a href="https://twitter.com/alleynyc" class="footer-icon" id="button_twitter">
                                     <img src="images/button_twitter.png">
                                 </a>
-                                <a href="">
-                                    <img src="images/button_twitter.png">
+                                <a href="http://www.tumblr.com/tagged/alleynyc" id="button_tumblr">
+                                    <img src="images/button_tumblr.png">
                                 </a>
                             </div>
                             <div class="visible-xs hidden-sm hidden-md hidden-lg">
-                                <a href="">
+                                <a href="mailto:support@alleynyc.com" class="footer-icon" id="button_email">
                                     <img src="images/button_email.png">
                                 </a>
-                                <a href="">
+                                <a href="https://www.facebook.com/alleynyc" class="footer-icon" id="button_fb">
                                     <img src="images/button_fb.png">
                                 </a>
-                                <a href="">
+                                <a href="https://twitter.com/alleynyc" class="footer-icon" id="button_twitter">
                                     <img src="images/button_twitter.png">
                                 </a>
-                                <a href="">
-                                    <img src="images/button_twitter.png">
+                                <a href="http://www.tumblr.com/tagged/alleynyc" class="footer-icon" id="button_tumblr">
+                                    <img src="images/button_tumblr.png">
                                 </a>
                             </div>
                         </div>
@@ -420,7 +432,6 @@
 
         $(function () {
             $("#top-signup-btn").waypoint(function(up) {
-                // $(this).addClass("stuck")
                 // Show
                 $("#fixed-signup").animate({
                     opacity: 1
@@ -428,20 +439,21 @@
             }, {offset: -15})
 
             $("#top-signup-btn").waypoint(function(down) {
-                // $(this).css({
-                //     position: "relative"
-                // })
                 $("#fixed-signup").animate({
                     opacity: 0
                 }, 100)
             }, {offset: 15})
 
-            // $("#top-signup-btn").waypoint("sticky", {
-            //     wrapper: '<div class="stuck-btn" />',
-            //     stuckClass: "stuck"
-            // })
-
-            // $("#top-signup-btn").waypoint("sticky")
+            // Switch icons in footer
+            $(".footer-icon").hover(function () {
+                var self = $(this)
+                var id = self.attr("id")
+                $("img", self).attr("src", "images/" + id + "_on.png")
+            }, function () {
+                var self = $(this)
+                var id = self.attr("id")
+                $("img", self).attr("src", "images/" + id + ".png")
+            })
 
         })
 
